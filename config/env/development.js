@@ -1,3 +1,3 @@
 module.exports = {
-  // development configuration options
+  sessionSecret: 'oceanlabs'
 };
