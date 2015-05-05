@@ -1,7 +1,11 @@
 {
-  "name" : "Choons Rebuild",
+  "name" : "Choons-API",
   "version" : "0.0.5",
   "dependencies" : {
-    "express" : "~4.8.8"
+    "express" : "~4.8.8",
+    "morgan": "~1.3.0",
+    "compression": "~1.0.11",
+  "body-parser": "~1.8.0",
+  "method-override": "~2.2.0"
   }
 }
