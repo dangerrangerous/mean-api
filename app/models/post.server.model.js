@@ -12,3 +12,5 @@ var PostSchema = new Schema({
     ref: 'User'
   }
 });
+
+mongoose.model('Post', PostSchema);
