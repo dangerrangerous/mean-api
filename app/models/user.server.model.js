@@ -9,12 +9,14 @@ var UserSchema = new Schema({
     index: true,
     match: /.+\@.+\..+/
   },
+
   username: {
     type: String,
     trim: true,
     unique: true,
     required: true
   },
+
   website: {
     type: String,
     set: function(url) {
@@ -29,7 +31,17 @@ var UserSchema = new Schema({
         }
     }
   },
-  password: String,
+
+  password: {
+    type: String,
+    validate: [
+      function(password) {
+        return password.length >= 6;
+      },
+      'Password should be longer'
+    ]
+  },
+
   created: {
     type: Date,
     default: Date.now
