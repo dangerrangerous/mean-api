@@ -15,7 +15,7 @@ var UserSchema = new Schema({
     type: String,
     trim: true,
     unique: true,
-    required: true
+    required: 'Username is required'
   },
 
   website: {
@@ -37,17 +37,24 @@ var UserSchema = new Schema({
     type: String,
     validate: [
       function(password) {
-        return password.length >= 6;
-      },
-      'Password should be longer'
+        return password && password.length > 6;
+      },'Password should be longer'
     ]
   },
-
-  created: {
-    type: Date,
-    default: Date.now
-  }
-});
+  salt: {
+    type: String
+  },
+ provider: {
+    type: String,
+    required: 'Provider is required'
+  },
+  providerId: String,
+  providerData: {},
+    created: {
+      type: Date,
+      default: Date.now
+    }
+  });
 
 UserSchema.virtual('fullName').get(function() {
   return this.firstName + ' ' + this.lastName;

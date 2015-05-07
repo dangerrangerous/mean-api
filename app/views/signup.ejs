@@ -1,6 +1,11 @@
 <!doctype html>
 <html>
-<% include common/head %>
+<head>
+  <% include common/head %>
+  <title>
+    <%=title %>
+  </title>
+</head>
 <body>
 <div class="header">
   <div class= "home-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
@@ -12,6 +17,11 @@
         <li class = "pure-menu-item pure-menu-selected"><a href ="/signup"> Signup</a></li>
       </ul>
   </div>
+</div>
+<div class"container">
+  <% for(var i in messages) { %>
+    <div class="flash"><%= messages[i] %></div>
+    <% } %>
 </div>
 <div class="container">
   <h1>Signup</h1>

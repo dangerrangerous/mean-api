@@ -30,10 +30,11 @@ module.exports = function() {
     secret: config.sessionSecret
   }));
 
+  app.use(flash());
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
 
-  app.use(flash());
+
   app.use(passport.initialize());
   app.use(passport.session());
 
