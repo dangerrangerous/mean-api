@@ -8,16 +8,16 @@ var UserSchema = new Schema({
   email: {
     type: String,
     index: true,
-    match: /.+\@.+\..+/
+    match: [/.+\@.+\..+/, "Please fill a valid e-mail adress"]
   },
 
   username: {
     type: String,
-    trim: true,
     unique: true,
-    required: 'Username is required'
+    required: 'Username is required',
+    trim: true
   },
-
+/*
   website: {
     type: String,
     set: function(url) {
@@ -32,7 +32,7 @@ var UserSchema = new Schema({
         }
     }
   },
-
+*/
   password: {
     type: String,
     validate: [
@@ -82,10 +82,12 @@ UserSchema.methods.authenticate = function(password) {
   return this.password === this.hashPassword(password);
 };
 
+/*
 // static method
 UserSchema.statics.findOneByUsername = function(username, callback) {
   this.findOne({ username: new RegExp (username, 'i') }, callback);
 };
+*/
 
 UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
   var _this = this;
@@ -107,8 +109,10 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
     });
 };
 
-
 // mongoose modifier
-UserSchema.set('toJSON', { getters: true, virtuals: true });
+UserSchema.set('toJSON', {
+  getters: true,
+  virtuals: true
+});
 
 mongoose.model('User', UserSchema);
