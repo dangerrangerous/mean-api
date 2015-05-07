@@ -8,16 +8,14 @@
     <div class="pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
         <li class = "pure-menu-item"><a href='/'>Home</a></li>
-        <li class = "pure-menu-item"><a href ="/login"> Login</a></li>
+        <li class = "pure-menu-item"><a href ="/signin">Signin</a></li>
         <li class = "pure-menu-item pure-menu-selected"><a href ="/signup"> Signup</a></li>
       </ul>
   </div>
 </div>
 <div class="container">
-  <h1> Login</h1>
-  <% if (message.length > 0) { %>
-    <div class="alert"><%= message %></div>
-    <% } %>
+  <h1>Signup</h1>
+
     <form action="/signup" method="post" class="pure-form" id="login-form">
       <fieldset>
         <input id="firstname" class="pure-input-1" type="firstname" placeholder="First Name"  name="firstName" required>
