@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-  crypt = require('crypto'),
+  crypto = require('crypto'),
   Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
@@ -49,7 +49,7 @@ var UserSchema = new Schema({
   }
 });
 
-UserSchema.virtual('fullname').get(function() {
+UserSchema.virtual('fullName').get(function() {
   return this.firstName + ' ' + this.lastName;
 }).set(function(fullName) {
   var splitName = fullName.split(' ');
