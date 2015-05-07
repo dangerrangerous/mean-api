@@ -1,0 +1,28 @@
+{
+  "name": "Choons-Rebuild",
+  "version": "0.0.6",
+  "description": "Choons-API rebuild",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Choons",
+    "API"
+  ],
+  "authors": [
+    "DangerRangerous"
+  ],
+  "license": "MIT",
+  "homepage": "index.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.6.0"
+  }
+}
