@@ -1,6 +1,6 @@
 {
   "name": "Choons-Rebuild",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Choons-API rebuild",
   "main": "server.js",
   "moduleType": [
@@ -23,6 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "pure": "~0.6.0"
+    "pure": "~0.6.0",
+    "angular": "~1.2"
   }
 }
