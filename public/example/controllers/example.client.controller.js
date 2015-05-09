@@ -1,6 +1,6 @@
 angular.module('example').controller('ExampleController', ['$scope',
-  'ExampleService',
-  function($scope, ExampleService) {
-    $scope.name = 'Choons-Rebuild!';
-    }
-  ]);
+  'Authentication',
+  function($scope, Authentication) {
+    $scope.name = Authentication.user ? Authentication.user.fullName : 'Choons-Rebuild!';
+  }
+]);
