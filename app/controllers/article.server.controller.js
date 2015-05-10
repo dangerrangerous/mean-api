@@ -88,3 +88,12 @@ exports.delete = function(req, res) {
     }
   });
 };
+
+exports.hasAuthorization = function(req, res, next) {
+  if (req.article.creator.id !== req.user.id) {
+    return res.status(403).send({
+      message: 'User is not authorized to perform that action'
+    });
+  }
+  next();
+};

@@ -131,3 +131,13 @@ exports.delete = function(req, res, next) {
     }
   })
 };
+// this does not check if a user is authorized to perform certain actions
+exports.requiresLogin = function (req, res, next) {
+  if (!req.isAuthenticated()) {
+    return res.status(401).send({
+      message: 'User is not logged in'
+    });
+  }
+// if user is logged in, call next middleware in the chain
+  next();
+}
