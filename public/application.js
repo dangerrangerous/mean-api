@@ -1,7 +1,7 @@
 var mainApplicationModuleName = 'Choons-Rebuild';
 
 var mainApplicationModule = angular.module(mainApplicationModuleName,
-['ngRoute', 'users', 'example']);
+['ngResource','ngRoute', 'users', 'example', 'articles']);
 
 mainApplicationModule.config(['$locationProvider',
   function($locationProvider) {

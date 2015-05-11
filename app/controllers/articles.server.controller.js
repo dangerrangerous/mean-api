@@ -60,7 +60,7 @@ exports.read = function(req, res) {
 exports.update = function(req, res) {
   var article = req.article;
 
-  article title = req.body.title;
+  article.title = req.body.title;
 
   article.content = req.body.content;
 
