@@ -46,8 +46,8 @@ $scope.delete = function(article) {
       }
     });
   } else {
-  $scope.article.$remove(function() {
-    $location.path('articles');
+    $scope.article.$remove(function() {
+      $location.path('articles');
     });
   }
 };

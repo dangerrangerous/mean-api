@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org">>
+<html xmlns:ng="http://angularjs.org">
   <head>
     <title><%= title %></title>
   </head>
   <% include common/head %>
   <body>
-    <% if ( user ) { %>
-      <a href="/signout">Sign out</a>
-    <% } else { %>
-      <a href="/signup">Signup</a>
-      <a href="/signin">Signin</a>
-  <% } %>
-  <br>
+
     <img src="img/small+_-.jpeg" alt="+_-">
-    <h1><%= title %></h1>
 
     <section ng-view></section>
 
@@ -30,6 +23,12 @@
   <script type="text/javascript" src="/lib/angular/angular.js"></script>
   <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+  <script type="text/javascript" src="/articles/articles.client.module.js"></script>
+  <script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+  <script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+  <script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
+
 
   <script type="text/javascript" src="/example/example.client.module.js"></script>
   <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
