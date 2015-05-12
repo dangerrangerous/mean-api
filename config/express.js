@@ -40,20 +40,19 @@ module.exports = function(db) {
     store: mongoStore
   }));
 
-  app.use(flash());
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
 
-
+  app.use(flash());
   app.use(passport.initialize());
   app.use(passport.session());
-
-  app.use(express.static('./public'));
 
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
   require('../app/routes/articles.server.routes.js')(app);
   require('./socketio')(server, io, mongoStore);
 
+  app.use(express.static('./public'));
+  
 return server;
 };
