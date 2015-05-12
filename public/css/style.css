@@ -1,0 +1,13 @@
+body {
+  font-family: "DejaVu Sans", "Open Sans", "Ubuntu";
+}
+#signup-button {
+  margin-top: 10px;
+}
+#login-form {
+  margin-top: 80px;
+}
+.alert {
+  margin-top: 40px;
+  z-index: 1;
+}
