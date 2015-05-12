@@ -17,22 +17,7 @@ var UserSchema = new Schema({
     required: 'Username is required',
     trim: true
   },
-/*
-  website: {
-    type: String,
-    set: function(url) {
-      if (!url) {
-        return url;
-      } else {
-        if (url.indexOf('http://') !== 0 && url.indexOf('https://')
- !== 0) {
-          url = 'https://' + url;
-        }
-        return url;
-        }
-    }
-  },
-*/
+
   password: {
     type: String,
     validate: [
@@ -81,13 +66,6 @@ UserSchema.methods.hashPassword = function(password) {
 UserSchema.methods.authenticate = function(password) {
   return this.password === this.hashPassword(password);
 };
-
-/*
-// static method
-UserSchema.statics.findOneByUsername = function(username, callback) {
-  this.findOne({ username: new RegExp (username, 'i') }, callback);
-};
-*/
 
 UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
   var _this = this;
