@@ -7,11 +7,12 @@ var config = require('./config'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   session = require('express-session'),
+  MongoStore = require('connect-mongo')(session),
   flash = require('connect-flash'),
   passport = require('passport');
 
-module.exports = function() {
-  var app = express();
+module.exports = function(db) {
+    var app = express();
     var server = http.createServer(app);
     var io = socketio.listen(server);
 
@@ -28,10 +29,15 @@ module.exports = function() {
   app.use(bodyParser.json());
   app.use(methodOverride());
 
+  var mongoStore = new MongoStore({
+    db: db.connection.db
+  });
+
   app.use(session({
     saveUnitialized: true,
     resave: true,
-    secret: config.sessionSecret
+    secret: config.sessionSecret,
+    store: mongoStore
   }));
 
   app.use(flash());
@@ -47,6 +53,7 @@ module.exports = function() {
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
   require('../app/routes/articles.server.routes.js')(app);
+  require('./socketio')(server, io, mongoStore);
 
 return server;
 };
