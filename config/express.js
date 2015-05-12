@@ -1,4 +1,6 @@
 var config = require('./config'),
+  http = require('http'),
+  socketio = require('socket.io'),
   express = require('express'),
   morgan = require('morgan'),
   compress = require('compression'),
@@ -10,6 +12,8 @@ var config = require('./config'),
 
 module.exports = function() {
   var app = express();
+    var server = http.createServer(app);
+    var io = socketio.listen(server);
 
   if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
@@ -44,5 +48,5 @@ module.exports = function() {
   require('../app/routes/users.server.routes.js')(app);
   require('../app/routes/articles.server.routes.js')(app);
 
-return app;
+return server;
 };

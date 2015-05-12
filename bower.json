@@ -1,6 +1,6 @@
 {
   "name": "Choons-Rebuild",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Choons-API rebuild",
   "main": "server.js",
   "moduleType": [
