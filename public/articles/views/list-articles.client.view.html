@@ -3,8 +3,7 @@
 
   <ul>
     <li data-ng-repeat="article in articles">
-      <a data-ng-href="#!/articles/{{article._id}}" data-ng-
-      bind="article.title"></a>
+      <a data-ng-href="#!/articles/{{article._id}}" data-ng-bind="article.title"></a>
 
       <br>
       <small data-ng-bind="article.created | date:'medium'"></small>
