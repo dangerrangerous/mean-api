@@ -28,6 +28,7 @@
     "angular": "~1.2",
     "angular-route": "~1.2",
     "angular-resource": "~1.2",
-    "responsiveboilerplate": "2.3.2"
+    "responsiveboilerplate": "2.3.2",
+    "angular-mocks": "~1.2"
   }
 }
