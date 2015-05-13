@@ -27,6 +27,7 @@
     "pure": "~0.6.0",
     "angular": "~1.2",
     "angular-route": "~1.2",
-    "angular-resource": "~1.2"
+    "angular-resource": "~1.2",
+    "responsiveboilerplate": "2.3.2"
   }
 }
