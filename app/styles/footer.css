@@ -1,0 +1,6 @@
+.footer {
+    background: #111;
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+}
